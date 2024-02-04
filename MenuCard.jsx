@@ -23,13 +23,13 @@ const MenuCard = ({ menuData }) => {
     <>
       <section className="main-card--cointainer">
         {menuData.map((curElem) => {
-          const { ID:ID ,Name:name, CategoryName:category, Price:price, Image:image, Description:description } = curElem;
+          const { ID:id ,Name:name, CategoryName:category, Price:price, Image:image, Description:description } = curElem;
           return (
             <>
               <div className="card-container">
-                <div className="card " key={ID}>
+                <div className="card " key={id}>
                   <div className="card-body">
-                    <span className="card-number card-circle subtle">{ID}</span>
+                    <span className="card-number card-circle subtle">{id}</span>
                     <span className="card-author subtle"> {category}</span>
                     <h2 className="card-title"> {name} </h2>
                     <span className="card-description subtle">
@@ -40,7 +40,7 @@ const MenuCard = ({ menuData }) => {
                   <img src={image} alt="images" className="card-media" />
                   <span className="card-author subtle"> {price}</span>
                   {/* <button className="card-tag  subtle" onClick={gotoResturant}>Add to Cart </button> */}
-                  <button className="card-tag  subtle" onClick={() => gotoResturant({ID:ID ,Name:name, CategoryName:category, Price:price, Image:image, Description:description})} >Add to Cart </button> 
+                  <button className="card-tag  subtle" onClick={() => gotoResturant(id ,name,category,price,image,description)} >Add to Cart </button> 
                 </div>
               </div>
             </>
